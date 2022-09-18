@@ -1,15 +1,17 @@
+#------------------------------------------------#
+# Created by frogen10
+# GitHub: https://github.com/frogen10
+#------------------------------------------------#
 
 from typing import List
 
 
 class Champions:
-    def __init__(self, connection) -> None:
-        self.connection =connection
-        
+    def __init__(self, championId: int) -> None:
+        self.championId = championId
+        self.champions = []
 
     async def get_champions(self):
-        champs= await self.connection.request('GET', '/lol-champions/v1')
-        return champs
-    
-
-
+        activedata = await self.connection.request('GET', f'/lol-champions/v1/inventories/{self.summonerId}/champions')
+        data = await activedata.json()
+        print(data)
