@@ -3,9 +3,6 @@
 # GitHub: https://github.com/frogen10
 #------------------------------------------------#
 
-from typing import List
-
-
 class Champions:
     def __init__(self, championId: int) -> None:
         self.championId = championId

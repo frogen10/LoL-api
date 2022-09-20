@@ -155,7 +155,6 @@ async def lobby_created(connection, event):
 @_connector.ws.register('/lol-champ-select/v1/session', event_types=('UPDATE',))
 async def lobby_created(connection, event):
     _logger.LogMessage(nameof(Main) ,f"Updated a champ select: {event.data}")
-    _logger.LogMessage(nameof(Main))
 
 if __name__ == '__main__':
     main = Main()
